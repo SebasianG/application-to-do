@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+html,body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    padding: 60px 0 ;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+
+    position: fixed;
+    padding: 15px;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+    background: #2484b7;
+    box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    input {
+        width: 100%;
+        height: 50px;
+        float: left;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 400;
+        text-indent: 18px;
+        padding: 0 60px 0 0;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 5px 25px 25px 5px;
+        border: 0px;
+        box-shadow: none;
+        outline: none;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        &::-webkit-input-placeholder {
+            color: rgba(255,255,255, 0.8);
+        }
+    }
+
+    button {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 2;
+        border-radius: 25px;
+        box-shadow: none;
+        outline: none;
+        border: none;
+        background-color: #fff;
+        cursor: pointer;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -8px 0 0 -8px;
+
+            .fill {
+                fill: #2484b7;
+            }
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    float: left;
+    padding: 15px;
+
+        ul {
+            width: 100%;
+            float: left;
+            color: #fff;
+            line-height: 23px;
+
+            li {
+                width: 100%;
+                float: left;
+                min-height: 50px;
+                position: relative;
+                padding: 14px 100px 14px 14px;
+                margin-bottom: 10px;
+                background: #004f7a;
+                border-radius: 10px;
+
+                &:last-of-type {
+                    margin: 0;
+                }
+
+                .buttons {
+                    width: 100px;
+                    height: 50px;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+
+                    .remove {
+                        svg{
+                            transition: fill .3s ease;
+                            -webkit-transition: fill .3s ease;
+                            -moz-transition: fill .3s ease;
+                            &:hover {
+                                fill: #e85656;
+                            }
+
+                        }
+                    }
+
+                    .success {
+                        .a{
+                            transition: color .3s ease;
+                            -webkit-transition: color .3s ease;
+                            -moz-transition: color .3s ease;
+                            color: #25b99a;
+
+                            &:hover {
+                                color: #fff;
+                            }
+                        }
+                    }
+
+                    button {
+                        width: 50px;
+                        height: 50px;
+                        float: left;
+                        position: relative;
+                        background: none;
+                        outline: none;
+                        box-shadow: none;
+                        border: none;
+
+                        &:last-child:before {
+                            content: '';
+                            width: 1px;
+                            height: 30px;
+                            position: absolute;
+                            top: 10px;
+                            left: 0px;
+                            background: #fff;
+
+                        }
+
+                        svg {
+                            width: 22px;
+                            height: 22px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            fill: #c0cecb;
+                            margin: -11px 0 0 -11px;
+                        }
+
+                        
+
+                        -webkit-appearance: none;
+                        -ms-appearance: none;
+                        appearance: none;
+                    }
+                }
+            }
+        }
+
+        #completed {    
+                position: relative;
+                padding:60px 0 0 0;
+
+            &:before {
+                content: '';
+                width: 150px;
+                height: 1px;
+                background: #2484b7;
+                position: absolute;
+                top: 30px;
+                left: 50%;
+                margin: 0 0 0 -75px;
+            }
+
+            &:empty {
+                &:after {
+                    content: 'Póki co nie wykonałeś zadań';
+                }
+            }
+        }
+
+        #todo {
+            &:empty {
+                &:after {
+                    content: 'Dodaj jakieś zadanie!';
+                }
+            }
+        }
+
+        #completed:after,
+        #todo:after {
+            width: 100%;
+            font-size: 13px;
+            display: block;
+            text-align: center;
+            color: #3595c8;
+        }
+
+}
+
+.text1 {
+    display: block;
+    color: red;
+    font-size: 14px;
+    position: absolute;
+    top: 15%;
+    left: 23%;
+}
+
+.no {
+    display: none;
+}
+
